@@ -1,0 +1,29 @@
+1.  db.tasks.find({ $expr: {
+$eq: [{ $month: "$conductedon" }, 10]
+}},{"topic_id":1,"task_id":1});
+
+
+2. db.company_drives.find({"drive_conducted_on":{$gt:new Date("2020-10-15"),$lt:new Date("2020-10-31")}});
+
+
+3. db.users_company_drives.aggregate([
+    { "$lookup":
+       {
+         from: "users",
+         localField: "user_id",
+         foreignField: "user_id",
+         as: "students"
+       }
+     },{
+	"$project":{"company_id":1,"students.user_name":1}
+	}
+    ]);
+
+
+
+4. db.codekata({"user_id":"id_of user"},{"problems_solved":1});
+
+5 . db.mentors({"mentee_count":{$gt:15}});
+
+6. db.attendence({"status":"absent","conducted_on":{$gt:new Date("2020-10-15"),$lt:new Date("2020-10-31")}).count();
+  db.tasks({"submission_status":"NO","assigned_on":{$gt:new Date("2020-10-15"),$lt:new Date("2020-10-31")}).count();
