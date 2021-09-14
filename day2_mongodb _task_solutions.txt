@@ -26,4 +26,4 @@ $eq: [{ $month: "$conductedon" }, 10]
 5 . db.mentors({"mentee_count":{$gt:15}});
 
 6. db.attendence({"status":"absent","conducted_on":{$gt:new Date("2020-10-15"),$lt:new Date("2020-10-31")}).count();
-  db.tasks({"submission_status":"NO","assigned_on":{$gt:new Date("2020-10-15"),$lt:new Date("2020-10-31")}).count();
+  
