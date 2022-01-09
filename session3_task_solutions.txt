@@ -1,3 +1,5 @@
+
+
 db.products.find();
 db.products.find({"product_price":{$gt:400,$lt:800}});
 db.products.find({"product_price":{$not:{$gt:400,$lt:800}}});
